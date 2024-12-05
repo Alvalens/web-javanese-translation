@@ -1,0 +1,85 @@
+<!-- index.html -->
+{% extends "layouts/master.html" %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<!-- simple post form text area -->
+
+<section class="featured-section">
+  <div class="container">
+      <div class="row justify-content-center">
+
+          <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+              <div class="custom-block bg-white shadow-lg">
+                      <div class="d-flex">
+                          <div>
+                              <h5 class="mb-2">Masukkan Bahasa Indonesia</h5>
+                          </div>
+                          <span class="badge bg-design rounded-pill ms-auto">ID</span>
+                      </div>
+                      <form action="{{ url_for('test') }}" method="post" id="textForm">
+                        <div class="form-group">
+                          <textarea class="form-control" name="content" id="content" rows="10"></textarea>
+                          <p id="wordCount" style="color:red; display:none; font-size: 18px;" class="mt-2">Kamu telah melewati batas 10 kata.</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-3 mt-3">Translate</button>
+                      </form>
+              </div>
+          </div>
+
+          <div class="col-lg-6 col-12">
+              <div class="custom-block custom-block-overlay">
+                  <div class="d-flex flex-column h-100">
+                      <img src="images/businesswoman-using-tablet-analysis.jpg" class="custom-block-image img-fluid" alt="">
+                      <div class="custom-block-overlay-text d-flex">
+                          <div>
+                              <h5 class="text-white mb-5">English Translated</h5>
+                              <h1 class="text-white mb-2"><div class="res"></div></h1>
+                          </div>
+                          <span class="badge bg-finance rounded-pill ms-auto">EN</span>
+                      </div>
+                      <div class="section-overlay"></div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</section>
+
+<!-- script to limit words in textarea -->
+<script>
+  const textarea = document.getElementById('content');
+  const wordCountMessage = document.getElementById('wordCount');
+  const form = document.getElementById('textForm');
+
+  textarea.addEventListener('input', () => {
+    const words = textarea.value.split(/\s+/).filter(word => word.length > 0);
+    if (words.length > 10) {
+      wordCountMessage.style.display = 'block';
+      textarea.value = words.slice(0, 10).join(' ');
+    } else {
+      wordCountMessage.style.display = 'none';
+    }
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const jsonData = {};
+    formData.forEach((value, key) => {
+      jsonData[key] = value;
+    });
+    const response = await fetch('{{ url_for("test") }}', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonData)
+    });
+    const data = await response.json();
+    document.querySelector('.res').innerHTML = data;
+  });
+</script>
+{% endblock %}

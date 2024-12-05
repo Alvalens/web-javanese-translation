@@ -1,0 +1,28 @@
+<!-- layout.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}My Website{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('serve_static', subdir='assets/css', filename='styles.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>My Website</h1>
+  </header>
+  <nav>
+    test
+  </nav>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+    <p>&copy; 2024 My Website</p>
+  </footer>
+  <script src="{{ url_for('serve_static', subdir='assets/js', filename='script.js') }}"></script>
+</body>
+
+</html> -->

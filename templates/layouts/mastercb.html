@@ -1,0 +1,29 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+  <title>Translate ID to EN</title>
+</head>
+<body>
+
+  <div class="section mt-4" style="height:100vh ; background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(253,255,227,1) 51%, rgba(255,188,0,1) 100%);">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <h1 class="text-center">Our First Model Translator ID to EN</h1>  
+          {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  
+
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>
