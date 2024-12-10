@@ -1,16 +1,10 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 
-import os
-
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow as tf
 import tensorflow_text as text
 import re
 
-
-DATASET_FILE_PATH = "uploads/dataset.csv"
-MODEL_FILE_PATH = "model.pkl"
-model = tf.saved_model.load("models/translator_id-en")
+model = tf.saved_model.load("models/translator")
 
 def translate_en(en_text):
     output = model(tf.constant(en_text)).numpy()
