@@ -1,10 +1,8 @@
-https://github.com/Alvalens/web-trans-jawa.githttps://github.com/Alvalens/web-trans-jawa.githttps://github.com/Alvalens/web-trans-jawa.githttps://github.com/Alvalens/web-trans-jawa.git
+# web-javanese-translation
 
-# TransAI
+![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=transWJT)
 
-![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=transAI)
-
-Welcome to TransAI, a simple yet powerful translation website that leverages Python, Flask, and TensorFlow to translate text from Javanesse krama to ngoko using a Transformer algorithm. The model is provided as a Jupyter Notebook which you can experiment and train the model yourself.
+Welcome to web-javanese-translation, a simple yet powerful translation website that leverages Python, Flask, and TensorFlow to translate text from Javanesse krama to ngoko using a Transformer algorithm. The model is provided as a Jupyter Notebook which you can experiment and train the model yourself.
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
@@ -22,12 +20,12 @@ Ensure you have Python version 3.10 and pip installed (windows). If not, you can
 1. Clone the Repository
 
    ```powershell
-   git clone "https://github.com/Alvalens/web-trans.git"
+   git clone "https://github.com/Alvalens/web-javanese-translation.git"
    ```
 2. Navigate to project directory
 
    ```powershell
-   cd web-trans-jawa
+   cd web-javanese-translation
    ```
 3. Create python virtual envirotment and activate it (optional)
 
@@ -35,7 +33,7 @@ Ensure you have Python version 3.10 and pip installed (windows). If not, you can
    python -m venv venv
    .venv\Scripts\activate
    ```
-4. Install Dependency, also ensure you run notebook first cell  at `notebook/transformer_id-en.ipynb`
+4. Install Dependency, also ensure you run notebook first cell  at `notebook/transformer_kr-ng.ipynb`
 
    ```
    pip install -r requirements.txt
